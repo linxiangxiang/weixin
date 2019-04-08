@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Default logback configuration provided for import, equivalent to the 
+	programmatic initialization performed by Boot -->
+
+<configuration>
+	<property name="CONSOLE_LOG_PATTERN"
+		value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%C %L){cyan} %clr(:){faint} %n    %m%n%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+	<include
+		resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<logger name="org.apache.tomcat" level="error" />
+	<logger name="org.springframework" level="error" />
+	<logger name="org.hibernate.SQL" level="trace" />
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+		level="trace" />
+
+	<!-- 根据getLogger方法传入的名称模糊匹配，支持前精确匹配 -->
+	<!-- org.fkjava能够匹配到相同包里面的全部类的日志记录器 -->
+	<!-- trace是最详细的日志跟踪级别，可以输出完整的日志信息 -->
+	<!-- trace > debug > info > warn > error > off -->
+	<logger name="com.gdkm" level="trace" />
+
+	<root level="error">
+		<appender-ref ref="CONSOLE" />
+	</root>
+</configuration>
