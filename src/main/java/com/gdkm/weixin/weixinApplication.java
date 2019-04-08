@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class weixinApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(weixinApplication.class, args);
-	} 
+		SpringApplication.run(weixinApplication.class, args); 
+	}   
 
 }
