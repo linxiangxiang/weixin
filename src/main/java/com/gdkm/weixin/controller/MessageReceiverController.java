@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gdkm.weixin.domain.InMessage;
+import com.gdkm.weixin.service.MessageConvertHelper;
+
 @RestController
 @RequestMapping("/kemao_2/message/receiver")
 public class MessageReceiverController {
@@ -32,9 +35,12 @@ public class MessageReceiverController {
 		
 		//收到消息
 		LOG.trace("收到的消息原文：\n{}\n----------------------------------",xml);
-		
+	
+	
+		InMessage inMessage = MessageConvertHelper.convert(xml);
+		LOG.debug("转换后的消息对象\n{}\n",inMessage);
 		return "success";
 	}
 			
-	
+		
 }
