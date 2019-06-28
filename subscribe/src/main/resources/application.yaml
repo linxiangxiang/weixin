@@ -1,0 +1,23 @@
+spring:
+   datasource:
+# useSSL=false  表示不使用加密通讯，本机的数据库没有必要加密
+# serverTimezone=CST 表示指定服务器的时区，CST=China Standard Time
+      url: jdbc:mysql://127.0.0.1:3306/kemao_2?useSSL=false&serverTimezone=CST&allowPublicKeyRetrieval=true
+      username: kemao_2
+      password: 1234
+   jpa:
+#自动生产数据库的表，DDL表示数据定义语言，通常用来管理表结构的
+      generate-ddl: true
+#运行时自动生成的SQL语句打印出来
+      show-sql: true
+   redis:
+# 应该要改为服务器的IP
+      host: 127.0.0.1
+      port: 6379
+# 数据库只能是0~15，因为目前使用的是默认设置，最多16个数据库
+      database: 15
+# 由于现在没有WEB模块，所以不需要端口
+# ----------------
+# Orphan comments:
+# ----------------
+# Was at begin of line:21 :#server.port: 8090

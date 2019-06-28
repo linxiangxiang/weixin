@@ -1,8 +1,0 @@
-spring: 
-   datasource: 
-      url: jdbc:mysql://localhost:3306/kemao2?useSSL=false&serverTime=CST&characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
-      username: root
-      password: root
-
-
-server.port: 8090
